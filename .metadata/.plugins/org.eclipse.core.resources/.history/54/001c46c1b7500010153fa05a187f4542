@@ -1,0 +1,19 @@
+package com.day12;
+
+import java.util.HashMap;
+import java.util.Map;
+
+//Map<Key,Value> 
+public class MapExample {
+	public static void main(String[] args) {
+		Map<Integer,String> customer = new HashMap<>();
+		customer.put(101, "Preetti");
+		
+		System.out.println(customer);
+		
+		customer.put(102, "Sachin");
+		//System.out.println(customer);
+		
+	}
+
+}

@@ -1,0 +1,39 @@
+package com.day4;
+import java.lang.*;
+//import java.util.concurrent.*;
+class MovieApp{
+	
+	int total_seats = 10;
+	
+	 void bookSeats(int seats) {
+		if(total_seats >=seats) {
+			System.out.println("Booked Successfully" +seats);
+			total_seats = total_seats - seats;
+			System.out.println("Seats left" +total_seats);
+		}
+		else
+		{
+			System.out.println("seats not booked");
+			System.out.println("seats available" +total_seats);
+		}
+	}
+}
+public class BookMyShow extends Thread {
+	
+	static MovieApp movie;
+    int seats;
+    
+    public void run() {
+    	movie.bookSeats(seats);
+    }
+    
+    public static void main(String[] args) {
+    	movie = new MovieApp();
+    	BookMyShow custmer1 = new BookMyShow();
+    	custmer1.seats =8;
+    	custmer1.start();
+    	BookMyShow custmer2 = new BookMyShow();
+    	custmer2.seats =6;
+    	custmer2.start();
+	}
+}

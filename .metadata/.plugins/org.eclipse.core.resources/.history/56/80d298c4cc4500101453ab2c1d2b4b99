@@ -1,0 +1,22 @@
+package com.day2;
+interface Department1
+{
+  public default void showDepartment()
+  {
+	  System.out.println("Department is HR");
+  }
+}
+class Department2
+{
+  public void showDepartment()
+  {
+	  System.out.println("Department is IT");
+  }
+}
+public class MultipleInheritanceExample extends Department1,Department2 {
+  public static void main(String[] args) {
+	
+	  
+}
+	
+}

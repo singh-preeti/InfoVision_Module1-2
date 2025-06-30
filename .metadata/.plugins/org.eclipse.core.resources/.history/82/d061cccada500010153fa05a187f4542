@@ -1,0 +1,17 @@
+package com.day12;
+
+import java.util.Stack;
+
+public class ChromeHistory {
+	
+	Stack<String> backStack = new Stack();
+	Stack<String> forwardStack = new Stack();
+	String currentPage = "Home";
+	
+	public void visit(String url) {}
+	public void back() {}
+    public void forward() {}
+    public void currentPage() {
+    	System.out.println("Current Page" +currentPage);
+    }
+}

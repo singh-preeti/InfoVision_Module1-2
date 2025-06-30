@@ -1,0 +1,60 @@
+package com.day11;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+class User{
+	String name;
+	String password;
+	public User(String name, String password) {
+		super();
+		this.name = name;
+		this.password = password;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", password=" + password + "]";
+	}
+	
+	
+}
+public class UserInterests {
+	public static void main(String[] args) {
+		Set<String> interest = new TreeSet<String>();
+		interest.add("Reading");
+		interest.add("Cooking");
+		interest.add("Traveling");
+		interest.add("Reading");
+		
+		Set<Integer>  set = new HashSet<Integer>();
+		set.add(100);
+		set.add(10);
+		set.add(200);
+		set.add(30);
+		set.add(189);
+		
+		System.out.println(set);
+		System.out.println("User interest" +interest);
+		
+		
+		Set<User> user_interest = new HashSet<User>();
+		user_interest.add(new User("Srinivas","Infovision"));
+		user_interest.add(new User("Jaya","Jaya"));
+		
+		System.out.println(user_interest);
+	}
+
+}

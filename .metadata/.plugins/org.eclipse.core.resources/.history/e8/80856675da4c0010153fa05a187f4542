@@ -1,0 +1,28 @@
+package com.day9;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class ArrayListDemo {
+	
+	public static void main(String[] args) {
+	   int arr[] = {1,2,3,4,5,5,6,67,7};
+		List<String> shopping_list = new ArrayList<String>();
+		List<String> history = new ArrayList<String>();
+		shopping_list.add("Shampoo");
+		shopping_list.add("Conditionar");
+		shopping_list.add("shoes");
+		shopping_list.add(0, "BodyWash");
+		shopping_list.set(1, "hair color");
+		
+		System.out.println(shopping_list.get(2));
+		System.out.println("show total size" +shopping_list.size());
+		//shopping_list.remove(0);
+		//System.out.println(shopping_list);
+		//System.out.println("show total size" +shopping_list.size());
+		
+	}
+
+}

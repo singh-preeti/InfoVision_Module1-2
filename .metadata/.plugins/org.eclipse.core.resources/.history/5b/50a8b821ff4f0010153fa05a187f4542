@@ -1,0 +1,39 @@
+package com.day11;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class ContactSyncApp {
+	public static void main(String[] args) {
+		
+		String[] simContcts = {"Srinivas","Sravan","Jeevan","Jaya","Akash"};
+		String[] googleContcts = {"Nisha","Nivetha","Lavanya","Ramya","Kirutika","Akash"};
+		String[] phoneContcts = {"Chitti","Mohan","Madan","Pawan","Chityala","Jaya"};
+		
+		Set<String> unique = new TreeSet();
+		
+		for(String contact:simContcts ) {
+			unique.add(contact);
+		}
+		
+		for(String contact:googleContcts ) {
+			unique.add(contact);
+		}
+		
+		for(String contact:phoneContcts ) {
+			unique.add(contact);
+		}
+		
+		
+		System.out.println("All Contact List");
+		for(String contact: unique ) {
+			System.out.println(" - " +contact);
+		}
+		
+		
+		
+		
+	}
+
+}

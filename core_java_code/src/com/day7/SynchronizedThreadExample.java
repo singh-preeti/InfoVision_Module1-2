@@ -1,0 +1,8 @@
+package com.day7;
+
+public class SynchronizedThreadExample {
+
+	  
+	  //Access shared variables and other shared resources
+  }
+

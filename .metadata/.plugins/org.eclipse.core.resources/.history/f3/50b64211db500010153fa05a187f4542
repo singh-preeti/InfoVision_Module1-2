@@ -1,0 +1,29 @@
+package com.day12;
+
+import java.util.Stack;
+
+public class ChromeHistory {
+	
+	Stack<String> backStack = new Stack();
+	Stack<String> forwardStack = new Stack();
+	String currentPage = "Home";
+	
+	public void visit(String url) {
+		backStack.push(currentPage);
+		currentPage = url;
+		forwardStack.clear();
+		System.out.println("Visited" +currentPage);
+	}
+	public void back() {}
+    public void forward() {}
+    public void currentPage() {
+    	System.out.println("Current Page" +currentPage);
+    }
+    
+    public static void main(String[] args) {
+    	ChromeHistory history = new ChromeHistory();
+    	history.visit("google.com");
+    	history.visit("openai.com");
+    	history.visit("github.com");
+	}
+}

@@ -1,0 +1,26 @@
+package com.day11;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class UserInterests {
+	public static void main(String[] args) {
+		Set<String> interest = new TreeSet();
+		interest.add("Reading");
+		interest.add("Cooking");
+		interest.add("Traveling");
+		interest.add("Reading");
+		
+		Set<Integer>  set = new TreeSet();
+		set.add(100);
+		set.add(10);
+		set.add(200);
+		set.add(30);
+		set.add(189);
+		
+		System.out.println(set);
+		System.out.println("User interest" +interest);
+	}
+
+}

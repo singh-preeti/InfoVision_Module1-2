@@ -1,0 +1,35 @@
+package com.day9;
+
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+class Message{
+	String to,message;
+
+	public Message(String to, String message) {
+		super();
+		this.to = to;
+		this.message = message;
+	}
+	
+}
+public class MessageDispatcher {
+	
+	ConcurrentLinkedQueue<Message> message_queue = new ConcurrentLinkedQueue();
+	
+	 public void sendMessage(String to, String msg){
+		message_queue.offer(new Message(to,msg));
+		
+	 }
+	 public void processMessage() {
+		 while(!message_queue.isEmpty()) {
+			 Message m1 = message_queue.poll();
+			 System.out.println("Sending to" +m1.to+ ":" +m1.message);
+		 }
+	 }
+	public static void main(String[] args) {
+		MessageDispatcher telecom = new MessageDispatcher();
+		telecom.sendMessage("Nisha", "Complete working with ArraylIst and LInked list");
+		
+	}
+
+}

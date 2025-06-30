@@ -1,0 +1,22 @@
+package com.day2;
+class Company{
+	
+	String comp_id = "Inf002";
+	String comp_type = "Telecom";
+	
+	public void showDetails() {
+		System.out.println(comp_id + ""+ comp_type);
+	}
+}
+class Department{
+	
+	String dept_id = "dept002";
+	String dept_name = "HR";
+	
+	public void  showDepartment() {
+		System.out.println(dept_id + "" +dept_name);
+	}
+}
+public class InheritanceExample {
+
+}

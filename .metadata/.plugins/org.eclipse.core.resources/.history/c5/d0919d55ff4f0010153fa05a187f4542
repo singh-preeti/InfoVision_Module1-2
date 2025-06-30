@@ -1,0 +1,89 @@
+package com.day11;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+
+// Contact class with name, phone number, and email
+class Contact {
+    private String name;
+    private String phoneNumber;
+    private String email;
+
+    public Contact(String name, String phoneNumber, String email) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    // Getters (can be used later if needed)
+    public String getName() { return name; }
+    public String getPhoneNumber() { return phoneNumber; }
+    public String getEmail() { return email; }
+
+    // Overriding equals() to compare name + phone number
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Contact)) return false;
+        Contact contact = (Contact) o;
+        return name.equalsIgnoreCase(contact.name) &&
+               phoneNumber.equals(contact.phoneNumber);
+    }
+
+    // Overriding hashCode() to be consistent with equals()
+    @Override
+    public int hashCode() {
+        return Objects.hash(name.toLowerCase(), phoneNumber);
+    }
+
+    @Override
+    public String toString() {
+        return name + " | " + phoneNumber + " | " + email;
+    }
+}
+
+public class ContactSyncApp {
+
+    public static void main(String[] args) {
+
+        // Contacts from SIM
+        Contact[] simContacts = {
+            new Contact("Jeevan", "9876543210", "jeevan@sim.com"),
+            new Contact("Nisha", "9123456789", "nisha@sim.com"),
+            new Contact("Chitti", "9988776655", "chitti@sim.com")
+        };
+
+        // Contacts from Google
+        Contact[] googleContacts = {
+            new Contact("Rahul Sharma", "9876543210", "rahul@gmail.com"),  // Duplicate
+            new Contact("Priya Kapoor", "8877665544", "priya@gmail.com"),
+            new Contact("Ravi Verma", "9988776655", "ravi@gmail.com")       // Duplicate
+        };
+
+        // Contacts from Outlook
+        Contact[] outlookContacts = {
+            new Contact("Anjali Mehta", "9123456789", "anjali@outlook.com"), // Duplicate
+            new Contact("Amit Sinha", "9090909090", "amit@outlook.com"),
+            new Contact("Neha Joshi", "9191919191", "neha@outlook.com")
+        };
+
+        // Set to store only unique contacts
+        Set<Contact> uniqueContacts = new HashSet<>();
+
+        // Merge all contacts into the set
+        for (Contact c : simContacts) uniqueContacts.add(c);
+        for (Contact c : googleContacts) uniqueContacts.add(c);
+        for (Contact c : outlookContacts) uniqueContacts.add(c);
+
+        // Display the synced contacts
+        System.out.println("📱 Synced Unique Contacts:");
+        for (Contact contact : uniqueContacts) {
+            System.out.println("- " + contact);
+        }
+    }
+}

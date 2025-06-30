@@ -1,0 +1,10 @@
+package com.day12;
+
+public class BubbleSortExample {
+	public static void bubblesort(int[] arr) {
+		int n = arr.length;
+		
+		boolean swapped;
+	}
+
+}

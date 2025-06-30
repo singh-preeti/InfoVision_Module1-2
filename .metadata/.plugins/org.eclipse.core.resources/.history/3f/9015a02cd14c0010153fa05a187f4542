@@ -1,0 +1,21 @@
+package com.day9;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class ArrayListDemo {
+	
+	public static void main(String[] args) {
+		
+		List<String> shopping_list = new ArrayList<String>();
+		shopping_list.add("Shampoo");
+		shopping_list.add("Conditionar");
+		shopping_list.add("shoes");
+		
+		System.out.println(shopping_list);
+		
+	}
+
+}

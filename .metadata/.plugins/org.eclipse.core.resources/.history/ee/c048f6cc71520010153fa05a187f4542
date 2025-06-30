@@ -1,0 +1,36 @@
+package com.day14;
+class  ProductNode{                              90
+	int price  ;                       30               120
+	ProductNode left,right;    20
+	
+	public ProductNode(int price) {
+		super();
+		this.price = price;
+	}
+	
+	public void insert(int newPrice) {
+		if(newPrice < price) {
+			if(left == null) left = new ProductNode(newPrice);
+			else left.insert(newPrice);
+		}
+		else {
+			if(right == null) right = new ProductNode(newPrice);
+			else right.insert(newPrice);
+		}
+	}
+	public boolean search(int targetPrice) {
+		if(price == targetPrice ) return true;
+		else if (targetPrice < price) return left != null  && left.search(targetPrice);
+		else return right != null && right.search(targetPrice);
+	}
+	public void inorder() {
+		if(left != null) left.inorder();
+		System.out.println(price + " ");
+		if(right != null) right.inorder();
+	}
+	
+	
+}
+public class ProductSearchTree {
+
+}

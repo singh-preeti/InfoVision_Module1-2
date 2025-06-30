@@ -1,0 +1,12 @@
+package com.day16;
+
+public class BankService implements InterestCalculator {
+    private Map<String, Customer> customers = new HashMap<>();
+
+    public void addCustomer(String id, String name) {
+        customers.putIfAbsent(id, new Customer(id, name));
+    }
+
+    public Optional<Customer> findCustomer(String id) {
+        return Optional.ofNullable(customers.get(id));
+    }

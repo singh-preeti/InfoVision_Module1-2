@@ -1,0 +1,12 @@
+package com.telecom;
+
+import com.day3.Department;
+import com.day3.Employee;
+
+public class Company  extends  Department{
+  public static void main(String[] args) {
+	Employee emp = new Employee();
+	emp.showDepartmentName();
+	emp.displayEmp();
+}
+}

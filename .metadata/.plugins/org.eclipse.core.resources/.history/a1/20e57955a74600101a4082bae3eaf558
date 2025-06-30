@@ -1,0 +1,22 @@
+package com.day3;
+class CustomerCopyConstructor{
+	 String name ;
+}
+
+public class CustomerCopyConstructor {
+	public static void main(String[] args) {
+		CustomerCopyConstructor c1 = new CustomerCopyConstructor();
+		c1.name = "Preetti";
+		
+		CustomerCopyConstructor c2 = c1;
+		
+		c2.name = "Sachin";
+		
+		System.out.println(c1.name);
+		System.out.println(c2.name);
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,12 @@
+package com.telecom;
+
+public class VoiceCallService extends BaseService {
+    public VoiceCallService(double rate) {
+        super("Voice Call Service", rate);
+    }
+
+    @Override
+    protected void processPayment(int units, double amount) {
+        System.out.printf("Billing Calls:", units, ratePerUnit, amount);
+    }
+}

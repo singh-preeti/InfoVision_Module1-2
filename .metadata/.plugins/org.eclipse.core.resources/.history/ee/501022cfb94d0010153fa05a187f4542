@@ -1,0 +1,28 @@
+package com.day9;
+class  Customer implements Comparable<Customer>{
+	
+
+   String name;
+   int priority;
+ public Customer(String name, int priority) {
+	super();
+	this.name = name;
+	this.priority = priority;
+	
+	
+  }
+@Override
+public int compareTo(Customer name) {
+	return Integer.compare(this.priority,name.priority);
+}
+@Override
+public String toString() {
+	return "Customer [name=" + name + ", priority=" + priority + "]";
+}
+
+   
+   
+}
+public class BankPriorityQueue {
+
+}

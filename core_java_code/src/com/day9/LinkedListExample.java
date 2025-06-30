@@ -1,0 +1,29 @@
+package com.day9;
+
+import java.util.LinkedList;
+import java.util.List;
+// user defined object
+public class LinkedListExample {
+	public static void main(String[] args) {
+		List<String> call_history = new LinkedList<>();
+		call_history.add("Nisha");
+		call_history.add("Alka");
+		call_history.add("Chitti");
+		call_history.add("Vilal");
+		call_history.add("Jayesh");
+		call_history.add("Nimmy");
+		
+		System.out.println(call_history);
+		System.out.println("Total size" +call_history.size());
+		System.out.println("Check if in my call history : " +call_history.contains("Chitti"));
+		System.out.println(" Get the name from call log" +call_history.get(2));
+		call_history.add("Srinivas");
+		System.out.println(call_history);
+		call_history.add(2, "Jaya");
+		System.out.println(call_history);
+	}
+	
+	
+	
+
+}

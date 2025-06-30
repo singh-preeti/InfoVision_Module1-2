@@ -1,0 +1,10 @@
+package com.day12;
+
+import java.util.Stack;
+
+public class ChromeHistory {
+	
+	Stack<String> backStack = new Stack();
+	Stack<String> forwardStack = new Stack();
+
+}

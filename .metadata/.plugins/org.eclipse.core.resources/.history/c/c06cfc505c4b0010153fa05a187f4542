@@ -1,0 +1,25 @@
+package com.day7;
+
+public class Inventory {
+
+	private int stock = 100 ;
+	
+	// 
+	public synchronized void purchase(String user,int qty) {
+		if(stock >= qty) {
+			System.out.println(user  + "purchased" +qty + "item");
+			stock -= qty;
+			System.out.println(stock);
+		}
+		else {
+			System.out.println("Not purchased!");
+		}
+		
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	
+}

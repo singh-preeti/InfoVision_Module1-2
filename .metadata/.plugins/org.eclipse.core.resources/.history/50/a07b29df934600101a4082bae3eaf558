@@ -1,0 +1,13 @@
+package com.day3;
+//interface Emp
+//{
+//	default void displayEmp() {
+//		 System.out.println("Displaying the list of employees....");
+//	 }	
+//}
+public class Employee {
+	  void displayEmp() {
+		 System.out.println("Displaying the list of employees....");
+	 }
+
+}

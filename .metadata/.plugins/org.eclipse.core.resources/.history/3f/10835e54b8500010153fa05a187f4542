@@ -1,0 +1,22 @@
+package com.day12;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+//Map<Key,Value> 
+public class MapExample {
+	public static void main(String[] args) {
+		Map<Integer,List<String>> customer = new HashMap<>();
+		// Add customer name
+		customer.put(101,Arrays.asList( "Preetti","Sachin","Nisha"));
+		
+		System.out.println(customer);
+		
+		customer.put(101, "Sachin");
+		System.out.println(customer);
+		
+	}
+
+}

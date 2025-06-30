@@ -1,0 +1,13 @@
+package com.day2;
+class Company{
+	
+	String comp_id = "Inf002";
+	String comp_type = "Telecom";
+	
+	public void showDetails() {
+		System.out.println(comp_id + ""+ comp_type);
+	}
+}
+public class InheritanceExample {
+
+}

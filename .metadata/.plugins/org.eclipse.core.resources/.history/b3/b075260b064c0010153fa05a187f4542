@@ -1,0 +1,30 @@
+package com.day8;
+
+import java.util.LinkedList;
+
+public class ProducerConsumerProblemDemo {
+
+	private  static final int capacity = 10;
+	private final LinkedList<Integer> buffer = new LinkedList();
+	
+	public void produce(int value) throws InterruptedException {
+		//synchronized(this){
+		while(buffer.size()==capacity) { // 10 -1=9-1
+		 wait();	
+		}
+		buffer.add(value);
+		System.out.println("produce" +value);
+		notify();
+		
+	}
+	public void consume() throws InterruptedException {
+		while(buffer.isEmpty()) {
+			wait();
+		}
+		int value  = buffer.removeFirst();
+		System.out.println("Product consumed" +value);
+		notify();
+	}
+}
+
+// Solid -> single responsibility principle -> one function to one class 

@@ -1,0 +1,17 @@
+package com.day11;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class UserInterests {
+	public static void main(String[] args) {
+		Set<String> interest = new HashSet();
+		interest.add("Reading");
+		interest.add("Cooking");
+		interest.add("Traveling");
+		interest.add("Reading");
+		
+		System.out.println("User interest" +interest);
+	}
+
+}

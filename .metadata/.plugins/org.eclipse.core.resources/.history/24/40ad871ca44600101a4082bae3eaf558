@@ -1,0 +1,34 @@
+package com.day3;
+
+public class ProductOder {
+	
+	String prod_name;
+	int qty;
+	double price;
+	//constructor to initialize the order
+	public ProductOder(String prod_name, int qty, double price) {
+		super();
+		this.prod_name = prod_name;
+		this.qty = qty;
+		this.price = price;
+	}
+	
+	public double getTotalPrice(){
+		return qty*price;
+		
+	}
+	void displayOrder() {
+		System.out.println("product:" +prod_name);
+		System.out.println("quantity:" +qty);
+		System.out.println("price:" +price);
+		System.out.println("total price:" + getTotalPrice());
+	}
+	
+	public static void main(String[] args) {
+		ProductOder prod_order = new ProductOder("Laptop",1,50000.89);
+		prod_order.displayOrder();
+	}
+	
+	
+
+}

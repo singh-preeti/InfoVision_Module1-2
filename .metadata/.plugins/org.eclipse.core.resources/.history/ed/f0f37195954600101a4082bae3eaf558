@@ -1,0 +1,9 @@
+package com.day3;
+
+final public class Department{
+	
+	protected void showDepartmentName()
+	{
+		System.out.println("Computer Department");
+	}
+}

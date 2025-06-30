@@ -1,0 +1,26 @@
+package com.day3;
+//interface Emp
+//{
+//	default void displayEmp() {
+//		 System.out.println("Displaying the list of employees....");
+//	 }	
+//}
+public class Department{
+	
+	protected void showDepartmentName()
+	{
+		System.out.println("Computer Department");
+	}
+}
+ class Employee extends Department {
+	public  void displayEmp() {
+		 System.out.println("Displaying the list of employees....");
+	 }
+	
+	public static void main(String[] args) {
+		Employee emp = new Employee();
+		emp.displayEmp();
+		emp.showDepartmentName();
+	}
+
+}

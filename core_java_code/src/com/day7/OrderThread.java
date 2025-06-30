@@ -1,0 +1,28 @@
+package com.day7;
+
+public class OrderThread  implements Runnable{
+	
+	private   Inventory inventory;
+	String user;
+	int qty;
+	public OrderThread(Inventory inventory, String user, int qty) {
+		super();
+		this.inventory = inventory;
+		this.user = user;
+		this.qty = qty;
+	}
+	public void run() {
+		inventory.purchase(user, qty);
+	}
+	
+	public static void main(String[] args) {
+		Inventory inv = new Inventory();
+		
+		OrderThread th1 = new OrderThread(inv, "Sravan", 30);
+		Thread user1 = new Thread(th1);
+		user1.start();
+//		OrderThread th2 = new OrderThread(inv, "Pawan", 90);
+//		th2.start();
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.day3;
+
+public class Employee {
+	 public void displayEmp() {
+		 System.out.println("Displaying the list of employees....");
+	 }
+
+}

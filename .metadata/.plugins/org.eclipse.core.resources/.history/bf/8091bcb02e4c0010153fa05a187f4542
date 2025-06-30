@@ -1,0 +1,51 @@
+package com.day5;
+
+class TransactionTask extends Thread {
+    public TransactionTask(ThreadGroup group, String name) {
+        super(group, name);
+    }
+
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + " started.");
+        try {
+            Thread.sleep(2000); // simulate processing
+        } catch (InterruptedException e) {
+            System.out.println(Thread.currentThread().getName() + " was interrupted.");
+        }
+        System.out.println(Thread.currentThread().getName() + " completed.");
+    }
+}
+
+public class BankThreadGroupExample {
+    public static void main(String[] args) {
+        // Create thread groups for departments
+        ThreadGroup depositGroup = new ThreadGroup("DepositGroup");
+        ThreadGroup withdrawGroup = new ThreadGroup("WithdrawGroup");
+
+        // Add threads to deposit group
+        Thread t1 = new TransactionTask(depositGroup, "Deposit-T1");
+        Thread t2 = new TransactionTask(depositGroup, "Deposit-T2");
+
+        // Add threads to withdraw group
+        Thread t3 = new TransactionTask(withdrawGroup, "Withdraw-T1");
+        Thread t4 = new TransactionTask(withdrawGroup, "Withdraw-T2");
+
+        // Start all threads
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+
+        // Display group details
+        System.out.println("Active threads in Deposit Group: " + depositGroup.activeCount());
+        System.out.println("Active threads in Withdraw Group: " + withdrawGroup.activeCount());
+
+        // Optional: interrupt all threads in withdraw group after delay
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {}
+
+        System.out.println("Interrupting Withdraw Group...");
+        withdrawGroup.interrupt(); // interrupts all threads in this group
+    }
+}

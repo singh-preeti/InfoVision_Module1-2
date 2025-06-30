@@ -1,0 +1,53 @@
+package com.day7;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+class BankAccount {
+    private int balance = 1000;
+    //ReentrantLock() means A ReentrantLock allows a thread to 
+    //acquire the same lock multiple times, which is particularly 
+    //useful when a thread needs to access a 
+    //shared resource repeatedly within its execution.
+    private final Lock lock = new ReentrantLock();
+
+    public void withdraw(String name, int amount) {
+        lock.lock(); // Acquire lock
+        try {
+            if (balance >= amount) {
+                System.out.println(name + " is withdrawing: " + amount);
+                balance -= amount;
+                System.out.println("Remaining balance: " + balance);
+            } else {
+                System.out.println(name + " tried to withdraw " + amount + " but insufficient funds.");
+            }
+        } finally {
+            lock.unlock(); // Always release lock
+        }
+    }
+}
+
+class User extends Thread {
+    private BankAccount account;
+    private String name;
+
+    public User(BankAccount account, String name) {
+        this.account = account;
+        this.name = name;
+    }
+
+    public void run() {
+        account.withdraw(name, 600);
+    }
+}
+
+public class LockExample {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount();
+        User u1 = new User(account, "Alice");
+        User u2 = new User(account, "Bob");
+
+        u1.start();
+        u2.start();
+    }
+}
